@@ -10,10 +10,11 @@ app.get( "/", ( req, res ) => {
     res.send( "Hello stuart!" );
 } );
 
+
 // // start the Express server
-// app.listen( port, () => {
-//     console.log( `server started at http://localhost:${ port }` );
-// } );
+app.listen( port, () => {
+    console.log( `server started at http://localhost:${ port }` );
+} );
 
 // Start the websocket server
 const server = http.createServer(app);
