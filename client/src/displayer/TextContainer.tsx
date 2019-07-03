@@ -8,8 +8,11 @@ class TextContainer extends React.Component <{}, {msg: string}> {
         super(props);
         this.state = { msg: '' };
         this.ws = new WebSocket('ws://localhost:88');
-        this.ws.onmessage = (evt: MessageEvent) => {
+    }
 
+    componentDidMount() {
+        this.ws.onmessage = (evt: MessageEvent) => {
+            // console.log(evt);
             this.setState(
                 {msg: evt.data}
             );
@@ -18,10 +21,7 @@ class TextContainer extends React.Component <{}, {msg: string}> {
     
         this.ws.onopen = () => {
             console.log('REACT OPENED SOCKET');
-            this.ws.send('testing, something else');
         }
-
-
     }
 
     render() {

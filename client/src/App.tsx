@@ -1,16 +1,15 @@
 import React from 'react';
-import './App.css';
-import TextContainer from './displayer/TextContainer';
-import VideoBackground from './displayer/VideoBackground';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Displayer from './displayer/Displayer';
+import Controller from './controller/Controller';
 
-const App: React.FC = () => {
-  return (
-    < VideoBackground />
-    // <div className="App">
-    //   < TextContainer />
-    // </div>
-  );
+function Routing() {
+    return (
+        <Router>
+            <Route exact path='/display' component={Displayer} />
+            <Route exact path='/control' component={Controller} />
+        </Router>
+    )
 }
 
-
-export default App;
+export default Routing;
