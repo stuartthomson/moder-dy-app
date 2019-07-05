@@ -4,4 +4,5 @@
     width: 100%;
     font-size: 18pt;
     font-family: 'Adobe Caslon Pro';
+    transition: opacity 20s ease-in-out;
 }
